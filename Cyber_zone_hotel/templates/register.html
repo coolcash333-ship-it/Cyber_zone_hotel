@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1>Регистрация</h1>
+    </div>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Создание аккаунта</legend>
+                {{ form.as_p }}
+                <button type="submit" class="btn">Зарегистрироваться</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

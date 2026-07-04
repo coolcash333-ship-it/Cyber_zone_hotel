@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %} Страница комнаты {% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="room-item">
+            <h1>Комната {{ room.room_title }}</h1>
+            <p>Тип: {{ room.get_room_type_display }}</p>
+            <p>Цена: {{ room.price_per_night }}</p>
+            <p>{{ room.description }}</p>
+            <div class="room-images-container">
+                {% if room.image_main %}
+                    <img src="{{ room.image_main.url }}" alt="Изображение комнаты" class="room-image-detail">
+                {% endif %}
+                {% if room.image_bathroom %}
+                    <img src="{{ room.image_bathroom.url }}" alt="Изображение ванной" class="room-image-detail">
+                {% endif %}
+            </div>
+            <a href="{% url 'book_room' room.id %}" class="room-item__link">Забронировать</a>
+        </div>
+    </div>
+{% endblock %}

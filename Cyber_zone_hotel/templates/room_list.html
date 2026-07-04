@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Список доступных комнат</h2>
+    <form method="get">
+        <label for="type">Тип:</label>
+        <select name="type" id="type">
+            <option value="">Все</option>
+            <option value="single_room">Одноместный</option>
+            <option value="double_room">Двухместный</option>
+            <option value="lux_room">Люкс</option>
+        </select>
+        <label for="max_price">Макс. цена:</label>
+        <input type="number" name="max_price" id="max_price">
+        <button type="submit">Фильтровать</button>
+    </form>
+    <div class="room-list">
+        {% for room in rooms %}
+        <div class="room-item">
+            <h3>Комната {{ room.room_title }}</h3>
+            {% if room.image_main %}
+            <img src="{{ room.image_main.url }}" alt="Комната {{ room.number }}" class="room-image">
+            {% endif %}
+            <p>Цена: {{ room.price_per_night }}</p>
+            <a href="{% url 'room_detail' room.id %}">Подробнее</a>
+        </div>
+        {% empty %}
+        <div class="room-item">Нет доступных комнат.</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

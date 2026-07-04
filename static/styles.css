@@ -1,0 +1,222 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/images/lobby3.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 4em;
+    margin: 0;
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+.header p {
+    font-size: 1.5em;
+    margin: 0;
+    color: #ffd700; /* A lighter shade for the subheading */
+}
+
+.container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+form label, form select, form input, form button {
+    color: #ffffff;
+    margin: 0 5px;
+}
+
+form select, form input {
+    padding: 5px;
+    background-color: #2e2e2e;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+form button, .login-link {
+    background-color: #ffcc00; /* Brighter color */
+    border: none;
+    padding: 10px 20px; /* Increased padding */
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+    font-weight: bold; /* Bold text */
+}
+
+.logout-form {
+    background-color: transparent;
+}
+
+.login-link {
+    text_decoration: none;
+    color: white;
+    outline: none;
+    border: none;
+    display: block;
+    width: 25%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+form button:hover {
+    background-color: #e6b800; /* Slightly darker on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.room-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.room-item {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.room-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.room-item h3 {
+    margin-top: 0;
+    color: #ffcc00;
+}
+
+.room-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.room-item p {
+    color: #ffffff;
+}
+
+
+
+
+.room-item a {
+    text-decoration: none;
+    color: #ffcc00;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.room-item a:hover {
+    color: #e6b800;
+}
+
+.room-item__link {
+    text-decoration: none;
+    color: #ffcc00;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.room-item__link:hover {
+    color: #e6b800;
+}
+.room-images-container {
+    display: flex;
+    flex-wrap: nowrap; /* Запрещает перенос строк */
+    overflow-x: auto; /* Добавляет горизонтальную прокрутку, если изображений слишком много */
+    gap: 10px; /* Расстояние между изображениями */
+    padding: 10px 0; /* Отступы сверху и снизу */
+    justify-content: start; /* Выравнивание изображений по началу контейнера */
+}
+
+
+.room-image-detail {
+    flex: 0 0 auto; /* Не позволяет изображению растягиваться или сжиматься */
+    width: 50%; /* Ширина изображения 25% от ширины контейнера */
+    max-width: 400px; /* Максимальная ширина изображения */
+    height: auto; /* Высота автоматически подстраивается по ширине */
+    object-fit: cover; /* Обрезает изображение, чтобы вписать в размеры */
+    border-radius: 8px; /* Скругленные углы */
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: #1e1e1e; /* Цвет фона поля */
+    border-radius: 8px; /* Скругление углов */
+    padding: 20px; /* Отступы внутри поля */
+}
+
+/* Стилизация заголовка внутри fieldset */
+legend {
+    font-size: 1.5em;
+    color: #ffcc00;
+    margin-bottom: 15px;
+    padding-bottom: 10px; /* Добавляет отступ снизу */
+    border-bottom: 2px solid #ffcc00; /* Подчеркивание заголовка */
+}
+
+/* Стили для полей ввода внутри форм */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form textarea {
+    padding: 10px; /* Отступы внутри поля */
+    background-color: #2e2e2e; /* Фоновый цвет полей ввода */
+    border: 1px solid #444; /* Цвет границы */
+    border-radius: 4px; /* Скругленные углы */
+    color: #ffffff; /* Цвет текста */
+    font-size: 1em; /* Размер шрифта */
+    width: 100%; /* Поля ввода занимают всю ширину контейнера */
+    box-sizing: border-box; /* Включает отступы и границы в ширину элемента */
+    margin-bottom: 15px; /* Отступ снизу между полями */
+}
+
+/* Стили для фокуса на полях ввода */
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #ffcc00; /* Цвет границы при фокусе */
+    outline: none; /* Убирает стандартное выделение */
+    background-color: #333; /* Немного другой цвет фона при фокусе */
+}
+
+/* Стили для текста внутри полей ввода */
+form input::placeholder,
+form select::placeholder,
+form textarea::placeholder {
+    color: #888; /* Цвет плейсхолдера */
+}

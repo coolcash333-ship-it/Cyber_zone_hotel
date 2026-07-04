@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1>Вход</h1>
+    </div>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <fieldset>
+                {{ form.as_p }}
+                 <button type="submit" class="btn">Войти</button>
+            </fieldset>
+
+        </form>
+        <p>Нет аккаунта? <a href="{% url 'register' %}" class="btn-link">Зарегистрироваться</a></p>
+    </div>
+</body>
+</html>
